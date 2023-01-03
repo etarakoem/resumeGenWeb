@@ -24,11 +24,13 @@ function store(){
     var phone = document.getElementById("phone").value;
     var mail = document.getElementById("mail").value;
     var linkedin = document.getElementById("linkedin").value;
+    var qualifi = document.getElementById("qualifi").value;
     localStorage.setItem("fullname",name);
     localStorage.setItem("address",address);
     localStorage.setItem("phone",phone);
     localStorage.setItem("mail",mail);
     localStorage.setItem("linkedin",linkedin);
+    localStorage.setItem("qualifi",qualifi);
 }
 
 function prefill(){
