@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="css/resume.css">
+    </head>
+
+    <body>
+        <h1 style="margin-bottom:0;"><span id="name"></span></h1>
+        <p class="header">
+            <span id="address"></span> | 
+            <span id="phone"></span> | 
+            <span class="blue">
+                <span id="mail"></span>
+            </span> | 
+            <span class="blue">
+                <span id="linkedin"></span>
+            </span></p>
+       
+        <h2>Profile Summary</h2>
+
+        <script>
+            function resumeGen(){
+                var name= localStorage.getItem("fname") + " " + localStorage.getItem("lname");
+                document.getElementById("name").innerHTML = name;
+
+
+                document.getElementById("address").innerHTML = localStorage.getItem("address");
+                document.getElementById("phone").innerHTML = localStorage.getItem("phone");
+                document.getElementById("mail").innerHTML = localStorage.getItem("mail");
+                document.getElementById("linkedin").innerHTML = localStorage.getItem("linkedin");
+            }
+            window.onload = resumeGen();
+        </script>
+
+    </body>
+
+</html>

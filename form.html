@@ -1,0 +1,94 @@
+<!Doctype html>
+
+<html>
+    <head>
+        <title>Info Form</title> 
+        <link rel="stylesheet" href="css/form.css">
+    </head>
+
+    <body>
+            <div class="wrapper">
+                <div id="survey_options">
+                    <h1>Basic Info</h1>
+                    <input type="text" name="fullname" id="fullname" placeholder="Name" value="Phuc Hua">
+                    <input type="text" name="address" id="address" placeholder="address" value="Mississauga, ON">
+                    <input type="email" name="mail" id="mail" placeholder="Email" value="samuel.phuc.hua@gmail.com">
+                    <input type="number" name="phone" id="phone" placeholder="phone" value="4168398948">
+                    <input type="text" name="linkedin" id="linkedin" placeholder="Linkedin URL" value="https://linkedin.com/in/samuel-hua">
+                    <h1>Qualification</h1>
+                    <p>(Your 1 line short description)</p>
+                    <!-- <div class="qualifications">
+                        <div class="qualifi_jobtype">
+                            <input type="text" name="jobtype" id="jobtype" placeholder="Job Type">
+                        </div>
+                        <div class="qualifi_options">
+                            <input type="text" name="qualification[]" id="qualifi" placeholder="Qualification">
+                        </div>
+                        <div class="qualifi_kw">
+                            <input type="text" name="keywords" id="keywords" placeholder="Keywords">
+                        </div>
+                    </div> -->
+                    <!-- <div class="qualifications">
+                        <input type="text" name="qualification[]" id="qualifi" placeholder="Qualification">
+                    </div> -->
+                    <input type="text" name="qualification[]" id="qualifi" placeholder="Qualification">
+                </div>
+                <div class="controls">
+                    <a href="#" id="add_more_fields"><i class="fa fa-plus"></i>Add More</a>
+                    <a href="#" id="remove_fields"><i class="fa fa-plus"></i>Remove Field</a>
+                </div>
+            </div>
+            <button href="testing.html" onclick="store()">To Resume</button>
+                <button onclick="localStorage.clear();" type="button">Reset</button><br>
+
+
+        <script>
+            var survey_options = document.getElementById('survey_options');
+            var add_more_fields = document.getElementById('add_more_fields');
+            var remove_fields = document.getElementById('remove_fields');
+
+            add_more_fields.onclick = function(){
+            var newField = document.createElement('input');
+            newField.setAttribute('type','text');
+            newField.setAttribute('name','qualification[]');
+            newField.setAttribute('id','qualifi');
+            newField.setAttribute('size',50);
+            newField.setAttribute('placeholder','Qualification');
+            survey_options.appendChild(newField);
+            }
+
+            remove_fields.onclick = function(){
+            var input_tags = survey_options.getElementsByTagName('input');
+            if(input_tags.length > 2) {
+                survey_options.removeChild(input_tags[(input_tags.length) - 1]);
+            }
+            }
+            function store(){
+                var name = document.getElementById("fullname").value;
+                var address = document.getElementById("address").value;
+                var phone = document.getElementById("phone").value;
+                var mail = document.getElementById("mail").value;
+                var linkedin = document.getElementById("linkedin").value;
+                localStorage.setItem("fullname",name);
+                localStorage.setItem("address",address);
+                localStorage.setItem("phone",phone);
+                localStorage.setItem("mail",mail);
+                localStorage.setItem("linkedin",linkedin);
+            }
+
+            function prefill(){
+                document.getElementById("fname").value = localStorage.getItem("fname");
+                document.getElementById("lname").value = localStorage.getItem("lname");
+                document.getElementById("address").value = localStorage.getItem("address");
+                document.getElementById("phone").value = localStorage.getItem("phone");
+                document.getElementById("mail").value = localStorage.getItem("mail");
+                document.getElementById("linkedin").value = localStorage.getItem("linkedin");
+            }
+
+            function toResume(){
+
+            }
+        </script>
+    </body>
+
+</html>
