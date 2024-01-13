@@ -24,22 +24,29 @@ ul {
     margin-bottom: 5px;
     background-color: #fff;
     padding-left: 10%;
-    padding-right: 10%;
+    padding-right: 5%;
     font-family: Arial;
+    width: 85%;
 }
-.column {
-    float: left;
-    background-color: #fff;
-    margin-bottom: 5px;
-    margin-top: 0px;
+
+.job-des {
+    width: 90%;
 }
+
 .right {
-    width: 30%;
+    width: 25%;
     text-indent: 5%;
+    text-align: left;
 }
+
+.bold {
+    font-weight: bold;
+}
+
 .left {
     width: 70%;
     text-indent: 5%;
+    position: sticky;
 }
 .white {
     padding-top: 0%;
@@ -51,8 +58,18 @@ ul {
 }
 
 .header {
-text-align: center;
-margin: 0;
-padding-top: 0;
+    text-align: center;
+    margin: 0;
+    padding-top: 0;
 }
 
+body {
+    width: 850px;
+}
+
+table {
+    table-layout:fixed;
+    width: 90%;
+    height: 50px;
+    /* border: 1px solid #ddd; */
+}
